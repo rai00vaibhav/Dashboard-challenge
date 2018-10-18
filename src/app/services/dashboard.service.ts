@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DashboardService {
+  private dataUrl = 'assets/json/dashboard.json'
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getConfig() {
+    return this.http.get(this.dataUrl);
+  }
 }
