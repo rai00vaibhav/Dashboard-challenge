@@ -4,6 +4,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatButtonModule, MatCheckboxModule,MatExpansionModule} from '@angular/material';
 import { CoreRoutingModule } from './core-routing.module';
 import { DashboardStore } from '../store/dashboard-store';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -12,7 +17,12 @@ import { DashboardStore } from '../store/dashboard-store';
     MatButtonModule,
     MatCheckboxModule,
     MatExpansionModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatInputModule,
+    MatSortModule,
+    MatToolbarModule
   ],
   providers:[DashboardStore],
   declarations: [DashboardComponent]

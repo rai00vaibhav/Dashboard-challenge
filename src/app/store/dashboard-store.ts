@@ -17,11 +17,21 @@ export class DashboardStore {
         this.dashService.getConfig()
             .subscribe(
                 res => {
-                    this.dashData.next(res);
+                    this.generateRandomValue(res);
                 },
                 err => console.log("Error retrieving Todos")
             );
 
         this.dashService.getConfig();
+    }
+    private generateRandomValue(array){
+        let radNum = Math.floor(Math.random() * Math.floor(array.length+1));
+        let newArray = [];
+        for (let index = 0; index < radNum; index++) {
+           newArray.push(array[index]);
+            
+        }
+        console.log(newArray);
+        this.dashData.next(newArray);
     }
 }
